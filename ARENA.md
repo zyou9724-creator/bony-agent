@@ -45,6 +45,26 @@ bash scripts/arena/e2e_test.sh        # 自检：能出一条短视频 = 环境�
 ### 🚫 沙箱物理禁止（需宿主机/CI）
 Playwright 浏览器自动发布（14 平台）、Computer Use、Electron 打包、Go/Rust 引擎、`next build`（走 `.github/workflows/web-build.yml`）。
 
+### 🎬 导演模式（第一档·全强化，`scripts/arena/arena_director.py`）
+
+Pipeline 的三个"桩/降级"环节由 Arena 亲自供电，**零 Key 产出发布级成片**：
+
+```
+web 检索选题 → Agent 亲撰旁白(--script-file)
+             → Agent 生图 (--images N 张 → Ken Burns 动态片段, 替换色块)
+             → Agent 语音 (--audio, 替换 edge-tts)
+             → 真实流水线(拼接/混音/字幕烧录) → 发布级 MP4
+```
+
+```bash
+arena-venv/bin/python scripts/arena/arena_director.py \
+  --subject "主题" --script-file s.txt --terms "词1,词2" \
+  --images 1.jpg 2.jpg 3.jpg --audio voice.mp3
+```
+
+已验证（2026-07-19）：检索→亲撰→3 张生图→Agent 配音→39.98s 1080×1920 成片，
+素材模式 `arena-images`，字幕逐句对轨。未提供的环节自动回落默认（桩/色块/edge-tts）。
+
 ## 2. 可复用资产地图（"借鉴创作"用）
 
 | 资产 | 位置 | 可复用点 |
