@@ -1,5 +1,7 @@
 # 🤖 AI Media Agent — 全链路内容生产与分发数字员工
 
+> 🧠 本仓库同时是 **Arena Agent 的第二大脑与手脚** → 见 [ARENA.md](ARENA.md)
+>
 > 一站式 AI 驱动的内容自动化平台：文案 → 图片/视频/音乐/短剧生成 → 自动定时发布到全平台矩阵。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
